@@ -1,11 +1,12 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
-import 'package:moody_player/screens/authentication/verify_otp.dart';
 import 'package:moody_player/screens/welcome/onboarding.dart';
 import 'package:moody_player/utilities/import.dart';
 
-void main() {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  await Firebase.initializeApp();
   SystemChrome.setSystemUIOverlayStyle(
     SystemUiOverlayStyle.dark,
   );

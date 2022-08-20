@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1055304639032",
+    "project_id": "moody-music-player-8958b",
+    "storage_bucket": "moody-music-player-8958b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055304639032:android:90e929af17363082e7bccd",
+        "android_client_info": {
+          "package_name": "com.example.moody_player"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055304639032-vepg0j9s61vc866g1r3gepgcdr2spqf6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.moody_player",
+            "certificate_hash": "d8c2c8a9e275c050fc7d65cc429ddd7992f4ada5"
+          }
+        },
+        {
+          "client_id": "1055304639032-4p23t2brsdorug1c62vf6rnjfp637g2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0vnLBTY9siOf_7xutcxMwtEQCaz5-93g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055304639032-4p23t2brsdorug1c62vf6rnjfp637g2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
