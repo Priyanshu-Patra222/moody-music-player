@@ -13,9 +13,9 @@ class _SignInState extends State<SignIn> {
   //TextFormField state
   final formKey = GlobalKey<FormState>();
 
-  final TextEditingController firstNameController = TextEditingController();
-  final TextEditingController lastNameController = TextEditingController();
-  final TextEditingController mobileNumberController = TextEditingController();
+  TextEditingController firstNameController = TextEditingController();
+  TextEditingController lastNameController = TextEditingController();
+  TextEditingController mobileNumberController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
