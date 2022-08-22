@@ -5,7 +5,11 @@ import 'package:moody_player/widgets/otp_form.dart';
 import 'package:moody_player/widgets/timer.dart';
 
 class VerifyOtp extends StatelessWidget {
-  const VerifyOtp({Key? key}) : super(key: key);
+  final String phoneNumber;
+  const VerifyOtp({
+    Key? key,
+    required this.phoneNumber,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +40,7 @@ class VerifyOtp extends StatelessWidget {
                   ),
                   SizedBox(height: getDeviceHeight(10)),
                   Text(
-                    "Otp has been sent to +91738******62",
+                    "Otp has been sent to +91 $phoneNumber",
                     style: TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: getDeviceWidth(15),

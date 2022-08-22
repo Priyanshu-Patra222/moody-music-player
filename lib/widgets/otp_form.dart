@@ -6,10 +6,12 @@ class OtpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final pin1 = TextEditingController();
-    final pin2 = TextEditingController();
-    final pin3 = TextEditingController();
-    final pin4 = TextEditingController();
+    TextEditingController pin1 = TextEditingController();
+    TextEditingController pin2 = TextEditingController();
+    TextEditingController pin3 = TextEditingController();
+    TextEditingController pin4 = TextEditingController();
+    TextEditingController pin5 = TextEditingController();
+    TextEditingController pin6 = TextEditingController();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
@@ -17,25 +19,25 @@ class OtpForm extends StatelessWidget {
           height: getDeviceHeight(70),
           width: getDeviceWidth(54),
           child: TextFormField(
+            controller: pin1,
             onChanged: (value) {
               if (value.length == 1) {
                 FocusScope.of(context)
                     .focusInDirection(TraversalDirection.right);
               }
             },
-            onSaved: (pin1) {},
             cursorColor: const Color(0xFF707070),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
-                  color: Color(0xFF707070),
+                  color: const Color(0xFF707070).withOpacity(0.5),
                 ),
                 borderRadius: BorderRadius.zero,
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
                   color: Color(0xFFBD94F8),
@@ -43,7 +45,7 @@ class OtpForm extends StatelessWidget {
                 borderRadius: BorderRadius.zero,
               ),
               hintText: "0",
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                   // color: kPrimaryTextColor.withOpacity(0.3),
                   ),
             ),
@@ -59,25 +61,25 @@ class OtpForm extends StatelessWidget {
           height: getDeviceHeight(70),
           width: getDeviceWidth(54),
           child: TextFormField(
+            controller: pin2,
             onChanged: (value) {
               if (value.length == 1) {
                 FocusScope.of(context)
                     .focusInDirection(TraversalDirection.right);
               }
             },
-            onSaved: (pin1) {},
             cursorColor: const Color(0xFF707070),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
-                  color: Color(0xFF707070),
+                  color: const Color(0xFF707070).withOpacity(0.5),
                 ),
                 borderRadius: BorderRadius.zero,
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
                   color: Color(0xFFBD94F8),
@@ -85,7 +87,7 @@ class OtpForm extends StatelessWidget {
                 borderRadius: BorderRadius.zero,
               ),
               hintText: "0",
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                   // color: kPrimaryTextColor.withOpacity(0.3),
                   ),
             ),
@@ -101,25 +103,25 @@ class OtpForm extends StatelessWidget {
           height: getDeviceHeight(70),
           width: getDeviceWidth(54),
           child: TextFormField(
+            controller: pin3,
             onChanged: (value) {
               if (value.length == 1) {
                 FocusScope.of(context)
                     .focusInDirection(TraversalDirection.right);
               }
             },
-            onSaved: (pin1) {},
             cursorColor: const Color(0xFF707070),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
-                  color: Color(0xFF707070),
+                  color: const Color(0xFF707070).withOpacity(0.5),
                 ),
                 borderRadius: BorderRadius.zero,
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
                   color: Color(0xFFBD94F8),
@@ -127,7 +129,7 @@ class OtpForm extends StatelessWidget {
                 borderRadius: BorderRadius.zero,
               ),
               hintText: "0",
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
                   // color: kPrimaryTextColor.withOpacity(0.3),
                   ),
             ),
@@ -143,25 +145,25 @@ class OtpForm extends StatelessWidget {
           height: getDeviceHeight(70),
           width: getDeviceWidth(54),
           child: TextFormField(
+            controller: pin4,
             onChanged: (value) {
               if (value.length == 1) {
                 FocusScope.of(context)
                     .focusInDirection(TraversalDirection.right);
               }
             },
-            onSaved: (pin1) {},
             cursorColor: const Color(0xFF707070),
-            decoration: const InputDecoration(
+            decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
-                  color: Color(0xFF707070),
+                  color: const Color(0xFF707070).withOpacity(0.5),
                 ),
                 borderRadius: BorderRadius.zero,
               ),
-              focusedBorder: OutlineInputBorder(
+              focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(
                   style: BorderStyle.solid,
                   color: Color(0xFFBD94F8),
@@ -169,7 +171,91 @@ class OtpForm extends StatelessWidget {
                 borderRadius: BorderRadius.zero,
               ),
               hintText: "0",
-              hintStyle: TextStyle(
+              hintStyle: const TextStyle(
+                  // color: kPrimaryTextColor.withOpacity(0.3),
+                  ),
+            ),
+            keyboardType: TextInputType.number,
+            textAlign: TextAlign.center,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(1),
+              FilteringTextInputFormatter.digitsOnly,
+            ],
+          ),
+        ),
+        SizedBox(
+          height: getDeviceHeight(70),
+          width: getDeviceWidth(54),
+          child: TextFormField(
+            controller: pin5,
+            onChanged: (value) {
+              if (value.length == 1) {
+                FocusScope.of(context)
+                    .focusInDirection(TraversalDirection.right);
+              }
+            },
+            cursorColor: const Color(0xFF707070),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  style: BorderStyle.solid,
+                  color: const Color(0xFF707070).withOpacity(0.5),
+                ),
+                borderRadius: BorderRadius.zero,
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  style: BorderStyle.solid,
+                  color: Color(0xFFBD94F8),
+                ),
+                borderRadius: BorderRadius.zero,
+              ),
+              hintText: "0",
+              hintStyle: const TextStyle(
+                  // color: kPrimaryTextColor.withOpacity(0.3),
+                  ),
+            ),
+            keyboardType: TextInputType.number,
+            textAlign: TextAlign.center,
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(1),
+              FilteringTextInputFormatter.digitsOnly,
+            ],
+          ),
+        ),
+        SizedBox(
+          height: getDeviceHeight(70),
+          width: getDeviceWidth(54),
+          child: TextFormField(
+            controller: pin6,
+            onChanged: (value) {
+              if (value.length == 1) {
+                FocusScope.of(context)
+                    .focusInDirection(TraversalDirection.right);
+              }
+            },
+            cursorColor: const Color(0xFF707070),
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: Colors.white,
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  style: BorderStyle.solid,
+                  color: const Color(0xFF707070).withOpacity(0.5),
+                ),
+                borderRadius: BorderRadius.zero,
+              ),
+              focusedBorder: const OutlineInputBorder(
+                borderSide: BorderSide(
+                  style: BorderStyle.solid,
+                  color: Color(0xFFBD94F8),
+                ),
+                borderRadius: BorderRadius.zero,
+              ),
+              hintText: "0",
+              hintStyle: const TextStyle(
                   // color: kPrimaryTextColor.withOpacity(0.3),
                   ),
             ),

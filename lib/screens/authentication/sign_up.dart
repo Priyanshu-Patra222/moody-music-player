@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:moody_player/screens/authentication/verify_otp.dart';
 import 'package:moody_player/utilities/import.dart';
 import 'package:moody_player/widgets/action_button.dart';
@@ -13,8 +14,8 @@ class _SignInState extends State<SignIn> {
   //TextFormField state
   final formKey = GlobalKey<FormState>();
 
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
+  // TextEditingController firstNameController = TextEditingController();
+  // TextEditingController lastNameController = TextEditingController();
   TextEditingController mobileNumberController = TextEditingController();
 
   @override
@@ -69,81 +70,10 @@ class _SignInState extends State<SignIn> {
                       ],
                     ),
                     SizedBox(
-                      height: getDeviceHeight(50),
-                    ),
-                    Row(
-                      children: [
-                        SizedBox(
-                          width: getDeviceWidth(160),
-                          //////////////////
-                          child: TextFormField(
-                            validator: (value) {
-                              if (value!.isEmpty ||
-                                  !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                                return "Enter your first name";
-                              } else {
-                                return null;
-                              }
-                            },
-                            controller: firstNameController,
-                            cursorColor: const Color(0xFF707070),
-                            decoration: const InputDecoration(
-                              hintText: "First name",
-                              labelText: "First name",
-                              labelStyle: TextStyle(color: Color(0xFF656F77)),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    style: BorderStyle.solid,
-                                    color: Color(0xFF707070)),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  style: BorderStyle.solid,
-                                  color: Color(0xFFBD94F8),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        const Spacer(),
-                        SizedBox(
-                          width: getDeviceWidth(160),
-                          child: TextFormField(
-                            validator: (value) {
-                              if (value!.isEmpty ||
-                                  !RegExp(r'^[a-z A-Z]+$').hasMatch(value)) {
-                                return "Enter your last name";
-                              } else {
-                                return null;
-                              }
-                            },
-                            controller: lastNameController,
-                            cursorColor: const Color(0xFF707070),
-                            decoration: const InputDecoration(
-                              hintText: "Last name",
-                              labelText: "Last name",
-                              labelStyle: TextStyle(color: Color(0xFF656F77)),
-                              enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  style: BorderStyle.solid,
-                                  color: Color(0xFF707070),
-                                ),
-                              ),
-                              focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  style: BorderStyle.solid,
-                                  color: Color(0xFFBD94F8),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: getDeviceHeight(30),
+                      height: getDeviceHeight(20),
                     ),
                     TextFormField(
+                      keyboardType: TextInputType.number,
                       validator: (value) {
                         if (value!.isEmpty ||
                             !RegExp(r'^(?:(?:\+|0{0,2})91(\s*[\ -]\s*)?|[0]?)?[0-9]\d{9}|(\d[ -]?){10}\d$/gm')
@@ -156,6 +86,7 @@ class _SignInState extends State<SignIn> {
                       controller: mobileNumberController,
                       cursorColor: const Color(0xFF707070),
                       decoration: const InputDecoration(
+                        prefixText: '+91',
                         hintText: "Mobile number",
                         labelText: "Mobile number",
                         labelStyle: TextStyle(color: Color(0xFF656F77)),
@@ -211,7 +142,10 @@ class _SignInState extends State<SignIn> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => const VerifyOtp(),
+          builder: (context) => VerifyOtp(
+            phoneNumber: mobileNumberController.text
+                .replaceRange(3, mobileNumberController.text.length, "******"),
+          ),
         ),
       );
     } else {
